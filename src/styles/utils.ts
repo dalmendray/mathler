@@ -19,12 +19,3 @@ export function getCellBackground(cell: Cell) {
       return {};
   }
 }
-
-export function getBorder(isFocused: boolean) {
-  return isFocused
-    ? {
-        borderColor: "linkPrimary",
-        borderWidth: 2,
-      }
-    : {};
-}

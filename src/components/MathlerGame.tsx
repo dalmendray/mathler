@@ -7,7 +7,7 @@ import Text from "./base/Text";
 import { CELLS_PER_ROW } from "../game/constants";
 import { useGameState } from "../game/useGameState";
 import { ThemeProvider } from "../styles/ThemeProvider";
-import { getBorder, getCellBackground } from "../styles/utils";
+import { getCellBackground } from "../styles/utils";
 
 const NUMBERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const OPERATORS = ["+", "-", "*", "/"];
@@ -216,28 +216,14 @@ export const MathlerGame = () => {
                     marginLeft={
                       gameState?.board[0].length === colIndex ? "none" : "xs"
                     }
-                    {...() => {
-                      switch (cell.status) {
-                        case "correct":
-                          return { backgroundColor: "buttonCorrect" };
-                        case "not-in-equation":
-                          return { backgroundColor: "buttonBackground" };
-                        case "empty":
-                          return {
-                            borderColor: "cellBorder",
-                            borderWidth: 1,
-                          };
-                        case "wrong-position":
-                          return {
-                            backgroundColor: "buttonWrongPosition",
-                          };
-                        default:
-                          return {};
-                      }
-                    }}
-                    // {...getBorder(
-                    //   focusIndex[0] === rowIndex && focusIndex[1] === colIndex
-                    // )}
+                    {...getCellBackground(cell)}
+                    {...(focusIndex[0] === rowIndex &&
+                    focusIndex[1] === colIndex
+                      ? {
+                          borderColor: "linkPrimary",
+                          borderWidth: 2,
+                        }
+                      : {})}
                   >
                     <Text variant="body">{cell.value}</Text>
                   </BaseButton>
