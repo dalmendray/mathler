@@ -2,10 +2,13 @@
 
 React Native implementation of the Mathler game: https://www.mathler.com/
 
-
 ![Screenshot_1706640238](https://github.com/dalmendray/mathler/assets/4749436/9756052f-654e-4381-9522-74b64f227f89)
 ![Screenshot_1706640234](https://github.com/dalmendray/mathler/assets/4749436/103415b7-7a32-4b90-b145-994067ada998)
 
+### Running the game
+
+- Follow the steps to install expo go here: https://docs.expo.dev/
+- Run `npm run android` or `npm run ios`
 
 ### Features:
 
