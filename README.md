@@ -7,8 +7,13 @@ React Native implementation of the Mathler game: https://www.mathler.com/
 
 ### Running the game
 
+- Run `yarn install`
 - Follow the steps to install expo go here: https://docs.expo.dev/
 - Run `npm run android` or `npm run ios`
+
+You can run the game in your browser by running:
+
+- `npx expo start --web`
 
 ### Features:
 
