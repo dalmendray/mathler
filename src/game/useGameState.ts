@@ -151,6 +151,7 @@ export function useGameState() {
             };
           }
 
+          valueCountCopy[inputValue]--;
           return {
             ...cell,
             status: "wrong-position",

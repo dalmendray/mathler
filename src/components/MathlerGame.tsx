@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Alert, Image, Switch } from "react-native";
+import { Image, Switch } from "react-native";
 
+import alert from "./alert";
 import BaseButton from "./base/BaseButton";
 import Box from "./base/Box";
 import Text from "./base/Text";
@@ -39,7 +40,7 @@ export const MathlerGame = () => {
 
   useEffect(() => {
     if (gameState?.status === "winner") {
-      Alert.alert(
+      alert(
         "Winner",
         "Congratulations! You have won the game!",
         [
@@ -59,22 +60,19 @@ export const MathlerGame = () => {
         }
       );
     } else if (gameState?.status === "game-over") {
-      Alert.alert(
+      alert(
         "Game over",
         `The response was: ${gameState.equation}`,
         [
           {
-            text: "Restart",
+            text: "New Game",
             onPress: () => {
               restartGame();
             },
           },
-          {
-            text: "Cancel",
-          },
         ],
         {
-          cancelable: true,
+          cancelable: false,
           userInterfaceStyle: "dark",
         }
       );
@@ -102,27 +100,25 @@ export const MathlerGame = () => {
   };
 
   const onRestartPress = () => {
-    // Alert.alert(
-    //   "Restart Game",
-    //   "Are you sure you want to restart the game?",
-    //   [
-    //     {
-    //       text: "Restart",
-    //       onPress: () => {
-    //         restartGame();
-    //       },
-    //     },
-    //     {
-    //       text: "Cancel",
-    //     },
-    //   ],
-    //   {
-    //     cancelable: true,
-    //     userInterfaceStyle: "dark",
-    //   }
-    // );
-
-    restartGame();
+    alert(
+      "Restart Game",
+      "Are you sure you want to restart the game?",
+      [
+        {
+          text: "Restart",
+          onPress: () => {
+            restartGame();
+          },
+        },
+        {
+          text: "Cancel",
+        },
+      ],
+      {
+        cancelable: true,
+        userInterfaceStyle: "dark",
+      }
+    );
   };
 
   const toggleSwitch = () => setIsDarkMode((previousState) => !previousState);

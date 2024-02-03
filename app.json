@@ -33,6 +33,12 @@
         "projectId": "8a330614-eb2d-4461-9a0c-b4842549d13b"
       }
     },
-    "owner": "ike100"
+    "owner": "ike100",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8a330614-eb2d-4461-9a0c-b4842549d13b"
+    }
   }
 }
